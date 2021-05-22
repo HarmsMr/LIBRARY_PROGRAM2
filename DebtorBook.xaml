@@ -1,0 +1,33 @@
+﻿<Window x:Class="LIBRARY_PROGRAM.DebtorBook" WindowStartupLocation="CenterScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LIBRARY_PROGRAM"
+        mc:Ignorable="d"
+        Title="DebtorBook" Height="450" Width="800">
+    <Grid>
+        <Button Content="Назад" HorizontalAlignment="Left" Margin="310,376,0,0" VerticalAlignment="Top" Width="83" Click="Back" Height="22"/>
+        <Button x:Name="_continue" Content="Вернуть" HorizontalAlignment="Left" Margin="398,376,0,0" VerticalAlignment="Top" Width="83" Height="22" Click="next_step"/>
+        <ListView x:Name="grid" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Left" Height="337" Margin="38,34,0,0" VerticalAlignment="Top" Width="717">
+            <ItemsControl.ItemsPanel>
+
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="3" HorizontalAlignment="Stretch"/>
+                </ItemsPanelTemplate>
+
+            </ItemsControl.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                        <Image Source="{Binding photo}" Stretch="UniformToFill" HorizontalAlignment="Stretch" Height="auto" Width="auto"/>
+                        <TextBlock  Text="{Binding titleBook}"/>
+                        <TextBlock  Text="{Binding Year}"/>
+
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+    </Grid>
+</Window>
